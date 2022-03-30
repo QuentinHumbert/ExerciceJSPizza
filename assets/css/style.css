@@ -19,7 +19,3 @@ main{
 .commande{
     margin-top: 5%;
 }
-
-span:not(#typepizza){
-    color: rgb(0, 255, 0);
-}

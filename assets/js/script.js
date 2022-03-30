@@ -1,16 +1,16 @@
 //Déclaration des variables
-let nomPizza;       
+let nomPizza;
 let nombrePizza;
 let prixPizza;
 let remisePizza;
 let prixTotal;
 
 //Attribution des valeur
-nomPizza = `Reine`; 
-nombrePizza = `15`;
+nomPizza = `Calzone`;
+nombrePizza = `2`;
 
 //Switch pour identifier le nom de la pizza et y assigner le prix
-switch (nomPizza) {     
+switch (nomPizza) {
     case `Reine`:
         prixPizza = 10;
         break;
@@ -37,27 +37,28 @@ switch (nomPizza) {
 // }
 
 //Condition ternaire sur la remise
-nombrePizza >= 5 ? remisePizza = 2 : remisePizza = 0;       
-nombrePizza >= 10 ? remisePizza = 10 : remisePizza = 0;
+(nombrePizza >= 5 && nombrePizza <= 10) ? remisePizza = 2 : remisePizza = 0;
+nombrePizza > 10 ? remisePizza = 10 : remisePizza = 2;
 
-// Variante if/else if pour la remise
+//Variante if/else if pour la remise
 // if (nombrePizza < 5) {
 //     remisePizza = 0;
-// } else if (nombrePizza >= 5) {
+// } else if (nombrePizza >= 5 && nombrePizza <= 10) {
 //     remisePizza = 2;
 // } else if (nombrePizza > 10) {
 //     remisePizza = 10;
 // }
 
 //Calcul du prix total
-prixTotal = prixPizza * nombrePizza - remisePizza;          
+prixTotal = prixPizza * nombrePizza - remisePizza;
 
-//Ajout de la valeur des variables dans leur span html respectif
-document.getElementById('nombrepizza').textContent = nombrePizza; 
-document.getElementById('typepizza').textContent = nomPizza;
-document.getElementById('prixpizza').textContent = prixPizza;
-document.getElementById('remise').textContent = remisePizza;
-document.getElementById('prixtotal').textContent = prixTotal;
+//Ajout de la valeur des variables dans leur span html respectif (Possible uniquement en ID)
+document.getElementById('commande__p__nombrepizza').textContent = `Vous avez commandé ${nombrePizza} pizzas`;
+document.getElementById('commande__p__nombrepizza').textContent = `Vous avez commandé ${nombrePizza} pizzas`;
+document.getElementById('commande__p__typepizza').textContent = `Type de pizza commandée: ${nomPizza}`;
+document.getElementById('commande__p__prixpizza').textContent = `Valeur unitaire: ${prixPizza}€`;
+document.getElementById('commande__p__remise').textContent = `Remise: ${remisePizza}€`;
+document.getElementById('commande__p__prixtotal').textContent = `Total à payer: ${prixTotal}€`;
 
 //Consolelog pour tester les variables et les conditions
 console.log(`Pizza: ${nomPizza}\nNombre de Pizza: ${nombrePizza}\nPrix unitaire: ${prixPizza}\nRemise: ${remisePizza}\nPrix total: ${prixTotal}`);
