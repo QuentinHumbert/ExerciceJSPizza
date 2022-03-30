@@ -1,13 +1,16 @@
-let nomPizza;
+//Déclaration des variables
+let nomPizza;       
 let nombrePizza;
 let prixPizza;
 let remisePizza;
 let prixTotal;
 
-nomPizza = `Reine`;
+//Attribution des valeur
+nomPizza = `Reine`; 
 nombrePizza = `15`;
 
-switch (nomPizza) {
+//Switch pour identifier le nom de la pizza et y assigner le prix
+switch (nomPizza) {     
     case `Reine`:
         prixPizza = 10;
         break;
@@ -21,7 +24,9 @@ switch (nomPizza) {
         prixPizza = 0;
         break;
 }
-// if (nomPizza === `Reine`) {
+
+//Variante if/else if pour identification pizza et assignement du prix
+// if (nomPizza === `Reine`) { 
 //     prixPizza = 10;
 // } else if (nomPizza === `Calzone`) {
 //     prixPizza = 9;
@@ -31,8 +36,11 @@ switch (nomPizza) {
 //     prixPizza = 0;
 // }
 
-nombrePizza >= 5 ? remisePizza = 2 : remisePizza = 0;
+//Condition ternaire sur la remise
+nombrePizza >= 5 ? remisePizza = 2 : remisePizza = 0;       
 nombrePizza >= 10 ? remisePizza = 10 : remisePizza = 0;
+
+// Variante if/else if pour la remise
 // if (nombrePizza < 5) {
 //     remisePizza = 0;
 // } else if (nombrePizza >= 5) {
@@ -41,12 +49,15 @@ nombrePizza >= 10 ? remisePizza = 10 : remisePizza = 0;
 //     remisePizza = 10;
 // }
 
-prixTotal = prixPizza * nombrePizza - remisePizza;
+//Calcul du prix total
+prixTotal = prixPizza * nombrePizza - remisePizza;          
 
-document.getElementById('nombrepizza').textContent = nombrePizza;
+//Ajout de la valeur des variables dans leur span html respectif
+document.getElementById('nombrepizza').textContent = nombrePizza; 
 document.getElementById('typepizza').textContent = nomPizza;
 document.getElementById('prixpizza').textContent = prixPizza;
 document.getElementById('remise').textContent = remisePizza;
 document.getElementById('prixtotal').textContent = prixTotal;
 
+//Consolelog pour tester les variables et les conditions
 console.log(`Pizza: ${nomPizza}\nNombre de Pizza: ${nombrePizza}\nPrix unitaire: ${prixPizza}\nRemise: ${remisePizza}\nPrix total: ${prixTotal}`);
